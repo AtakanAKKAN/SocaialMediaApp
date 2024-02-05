@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: rgb(139,69,19);
+background: linear-gradient(135deg, rgba(139,69,19,1) 0%, rgba(210,180,140,1) 100%);
+  @apply w-full h-screen;
+}
+
+.ant-btn-primary {
+  background-color: #1677ff;
+}
