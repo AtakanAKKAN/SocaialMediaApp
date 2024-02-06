@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/header/Header";
 import Archive from "../components/archive/Archive";
 import { Button } from "antd";
@@ -9,6 +9,8 @@ import { BsBookmark } from "react-icons/bs";
 import { FaPlus } from "react-icons/fa6";
 
 const ProfilePage = () => {
+  const [isIndex, setIsIndex] = useState(1);
+
   return (
     <div className="flex max-w-[1500px] mx-auto">
       <div className="w-1/4 h-screen">
@@ -40,25 +42,48 @@ const ProfilePage = () => {
         </div>
 
         <div className="w-full bg-slate-900 flex text-white justify-evenly items-center text-3xl p-4">
-          <span className="px-28 py-1 bg-white/20 rounded-3xl transition-all duration-500 cursor-pointer">
+          <span
+            onClick={() => setIsIndex(1)}
+            className={`px-28 py-1 hover:bg-white/20 rounded-3xl transition-all duration-500 cursor-pointer ${
+              isIndex === 1 && "bg-white/20"
+            }`}
+          >
             <BsInbox />
           </span>
-          <span className="px-28 py-1 hover:bg-white/20 rounded-3xl transition-all duration-500 cursor-pointer">
+          <span
+            onClick={() => setIsIndex(2)}
+            className={`px-28 py-1  hover:bg-white/20 rounded-3xl transition-all duration-500 cursor-pointer ${
+              isIndex === 2 && "bg-white/20"
+            }`}
+          >
             <BsBookmark />
           </span>
-          <span className="px-28 py-1 hover:bg-white/20 rounded-3xl transition-all duration-500 cursor-pointer">
+          <span
+            onClick={() => setIsIndex(3)}
+            className={`px-28 py-1  hover:bg-white/20 rounded-3xl transition-all duration-500 cursor-pointer ${
+              isIndex === 3 && "bg-white/20"
+            }`}
+          >
             <MdOutlinePersonPin />
           </span>
         </div>
 
-        <div className="w-full bg-slate-800 max-h-[calc(100vh-_310px)] h-full p-4 grid grid-custom-css-profile-page gap-x-4 gap-y-8 overflow-y-auto pb-4">
-          <Archive />
-          <Archive />
-          <Archive />
-          <div className="w-full h-full bg-white/20 flex justify-center items-center text-4xl cursor-pointer min-h-[100px]">
-            <FaPlus />
+        {isIndex === 1 && (
+          <div className="w-full bg-slate-800 max-h-[calc(100vh-_310px)] h-full p-4 grid grid-custom-css-profile-page gap-x-4 gap-y-8 overflow-y-auto pb-4 ">
+            <Archive />
+            <Archive />
+            <Archive />
+            <div className="w-full h-full bg-white/20 flex justify-center items-center text-4xl cursor-pointer min-h-[100px]">
+              <FaPlus />
+            </div>
           </div>
-        </div>
+        )}
+
+        {isIndex === 2 && (
+          <div className="w-full bg-slate-800 max-h-[calc(100vh-_310px)] h-full p-4 grid grid-custom-css-profile-page gap-x-4 gap-y-8 overflow-y-auto pb-4">
+            <Archive />
+          </div>
+        )}
       </div>
     </div>
   );

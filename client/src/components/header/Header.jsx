@@ -22,6 +22,9 @@ const Header = () => {
         <Link to={"/profile"} className="flex items-center gap-2 text-2xl">
           <IoPersonOutline /> Profil
         </Link>
+        <Link to={"/register"} className="flex items-center gap-2 text-2xl">
+          <IoPersonOutline /> Giriş
+        </Link>
       </div>
 
       <div className="w-full h-20 hover:bg-[#642900] mt-auto flex justify-between items-center px-5 rounded-2xl transition-all duration-300 cursor-pointer bg-[#642900]/40 ">
