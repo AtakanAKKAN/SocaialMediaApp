@@ -17,12 +17,12 @@ const ProductItems = () => {
 
   return (
     <div className="w-[650px] flex flex-col gap-2 rounded-lg bg-[#F8E2C5] overflow-hidden shadow-lg">
-      <div className="w-full px-7 flex justify-between items-center pt-2">
+      <div className="w-full px-5 flex justify-between items-center pt-2">
         <div className="flex gap-2 justify-center items-center ">
           <img
             src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
-            className="w-8 h-8 object-cover rounded-full"
+            className="w-9 h-9 object-cover rounded-full"
           />
           <span>Kullanıcı Adı</span>
         </div>

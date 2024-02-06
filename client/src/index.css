@@ -23,3 +23,7 @@ body {
 .ant-btn-primary {
   background-color: #1677ff;
 }
+
+.grid-custom-css-profile-page{
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
