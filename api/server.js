@@ -8,6 +8,8 @@ const port = 5000;
 
 //routes
 const postRoute = require("./Routes/posts.js");
+const userRoute = require("./Routes/users.js");
+const userInfoRoute = require("./Routes/userInfo.js");
 
 const connect = async () => {
   try {
@@ -23,6 +25,8 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/post", postRoute);
+app.use("/user", userRoute);
+app.use("/userInfo", userInfoRoute);
 
 app.listen(port, () => {
   connect();

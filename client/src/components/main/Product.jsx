@@ -10,7 +10,7 @@ const Product = () => {
   useState(() => {
     const getPosts = async () => {
       try {
-        const res = await fetch("http://localhost:5000/post/get-all");
+        const res = await fetch(process.env.REACT_APP_SERVER_URL + "/post/get-all");
         if (!res.ok) {
           message.error("HATA!!");
           return;

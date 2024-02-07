@@ -4,7 +4,12 @@ import ProfilePage from "./pages/ProfilePage";
 import RegisterPage from "./pages/Auth/RegisterPage";
 import LoginPage from "./pages/Auth/LoginPage";
 
-function App() {
+const App = () => {
+
+ 
+
+  
+
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
@@ -13,6 +18,6 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
     </Routes>
   );
-}
+};
 
 export default App;
