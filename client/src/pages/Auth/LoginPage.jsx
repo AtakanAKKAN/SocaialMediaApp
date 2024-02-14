@@ -52,7 +52,7 @@ const LoginPage = () => {
     <div className="max-w-[1500px] px-4 pt-16 flex flex-col mx-auto gap-4">
       <div className="w-full flex flex-col justify-center items-center text-[#3C1900]">
         <GiPeanut className="text-9xl" />
-        <span className="text-4xl">Tekrar Hoşgeldin!</span>
+        <span className="text-4xl font-bold">Hoşgeldin!</span>
       </div>
       <Form
         autoComplete="off"

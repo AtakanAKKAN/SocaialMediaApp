@@ -1,3 +1,4 @@
+import { Image } from "antd";
 import React, { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import { FaRegBookmark } from "react-icons/fa";
@@ -18,7 +19,7 @@ const ProductItems = ({ product }) => {
 
   return (
     <div
-      className="w-[650px] flex flex-col gap-2 rounded-lg bg-[#F8E2C5] overflow-hidden shadow-lg"
+      className="w-[650px] max-lg:w-[550px] max-md:w-full flex flex-col gap-2 rounded-lg bg-[#F8E2C5] overflow-hidden shadow-lg"
       key={product._id}
     >
       <div className="w-full px-5 flex justify-between items-center pt-2">
@@ -38,7 +39,7 @@ const ProductItems = ({ product }) => {
         </div>
       </div>
 
-      <img src={product.img} alt="title" className="w-full h-72 object-cover" />
+      <Image src={product.img} alt="title" className="max-w-full h-72 object-cover" height="288px" />
 
       <div className="flex justify-between items-center px-5 mb-4 text-xl">
         <span className="flex items-center">

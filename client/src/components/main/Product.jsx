@@ -26,7 +26,7 @@ const Product = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-10 px-4 items-center overflow-x-auto mb-5">
+    <div className="flex flex-col gap-10 px-4 items-center mb-5 max-md:px-1 ">
       {post ? post.map((product) => (
         <ProductItems product={product} key={product._id} />
       )) : <p>Burası Boş görünüyor Kaptan</p>}

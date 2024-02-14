@@ -34,7 +34,7 @@ const Aside = () => {
         size="large"
       />
 
-      <div className="grid grid-custom-css gap-2 place-items-center mt-4 px-5">
+      <div className="grid grid-custom-css-lg max-lg:grid-custom-css-md gap-2 place-items-center mt-4 px-5">
         {users.map((item) => (
           <AsideProfiles item={item} key={item._id} />
         ))}

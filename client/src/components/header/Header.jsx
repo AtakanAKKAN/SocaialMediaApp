@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { GiPeanut } from "react-icons/gi";
-import { TiHome } from "react-icons/ti";
-import { IoSearchSharp } from "react-icons/io5";
-import { IoPersonOutline } from "react-icons/io5";
-import { BsThreeDots } from "react-icons/bs";
+import { FaHome } from "react-icons/fa";
+import { IoSearchSharp ,IoPersonOutline} from "react-icons/io5";
+import { BiLogInCircle, BiLogOutCircle  } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 import { message } from "antd";
 
@@ -56,58 +55,69 @@ const Header = () => {
   };
 
   return (
-    <div className="flex flex-col text-white gap-5 p-4 w-full min-w-[250px] h-full">
-      <GiPeanut className=" text-4xl" />
-      <div className="flex flex-col gap-4">
-        <Link to={"/"} className="flex items-center gap-2 text-2xl">
-          <TiHome /> Anasayfa
+    <div className="flex lg:flex-col text-white gap-5 p-4 lg:w-full lg:min-w-[250px] lg:h-full w-full max-lg:gap-[2vw] z-50 max-lg:bg-black/80 ">
+      <GiPeanut className=" text-4xl max-lg:hidden " />
+      <div className="flex lg:flex-col gap-4 max-lg:w-full max-lg:justify-between ">
+        <Link
+          to={"/"}
+          className="flex items-center gap-2 text-2xl max-lg:text-xl"
+        >
+          <FaHome /> <span className="">Anasayfa</span>
         </Link>
 
-        <Link className="flex items-center gap-2 text-2xl">
-          <IoSearchSharp /> Keşfet
+        <Link className="flex items-center gap-2 text-2xl max-lg:text-xl">
+          <IoSearchSharp /> <span className="">Keşfet</span>
         </Link>
 
         {localStorage.getItem("secretUserId") ? (
-          <Link to={"/profile"} className="flex items-center gap-2 text-2xl">
-            <IoPersonOutline /> Profil
+          <Link
+            to={"/profile"}
+            className="flex items-center gap-2 text-2xl max-lg:text-xl"
+          >
+            <IoPersonOutline /> <span className="">Profil</span>
           </Link>
         ) : (
-          <Link to={"/login"} className="flex items-center gap-2 text-2xl">
-            <IoPersonOutline /> Profil
+          <Link
+            to={"/login"}
+            className="flex items-center gap-2 text-2xl max-lg:text-xl"
+          >
+            <IoPersonOutline /> <span className="">Profil</span>
           </Link>
         )}
 
         {localStorage.getItem("secretUserId") ? (
           <Link
             to={"/login"}
-            className="flex items-center gap-2 text-2xl"
+            className="flex items-center gap-2 text-2xl max-lg:text-xl"
             onClick={logOut}
           >
-            <IoPersonOutline /> Çıkış
+            <BiLogOutCircle /> <span className="">Çıkış</span>
           </Link>
         ) : (
-          <Link to={"/login"} className="flex items-center gap-2 text-2xl">
-            <IoPersonOutline /> Giriş
+          <Link
+            to={"/login"}
+            className="flex items-center gap-2 text-2xl max-lg:text-xl"
+          >
+            <BiLogInCircle /> <span className="">Giriş</span>
           </Link>
         )}
       </div>
-
       {localStorage.getItem("secretUserId") && (
-        <div className="w-full h-20 hover:bg-[#642900] mt-auto flex justify-between items-center px-5 rounded-2xl transition-all duration-300 cursor-pointer bg-[#642900]/40 ">
+        <div className="w-full lg:h-20 hover:bg-[#642900] lg:mt-auto flex justify-between items-center lg:px-5 px-1 py-2 rounded-2xl transition-all duration-300 cursor-pointer bg-[#642900]/40 max-lg:hidden">
           <img
-            src={user.userImg}
+            src={user.userImg || "images/Blank-Avatar.png"}
             alt=""
             className="w-16 h-16 object-cover rounded-full"
           />
 
-          <div className="flex flex-col">
-            <span className="font-bold text-xl">{user.userName}</span>
-            <small className="text-xs">{user.email}</small>
-          </div>
+          <>
+            <div className="flex flex-col">
+              <span className="font-bold text-xl">{user.userName}</span>
+              <small className="text-xs">{user.email}</small>
+            </div>
 
-          <div>
-            <BsThreeDots />
-          </div>
+            
+          </>
         </div>
       )}
     </div>
