@@ -68,7 +68,7 @@ const ProfilePage = () => {
   return (
     <div className="flex max-w-[1500px] mx-auto">
       <div className="w-1/4 h-screen max-lg:w-full max-lg:fixed max-lg:bottom-0 max-lg:left-0 max-lg:h-auto z-50 ">
-        <Header />
+        <Header user={user} />
       </div>
       <div className="w-3/4 flex flex-col max-lg:w-full max-lg:pb-14">
         <div className="w-full flex">

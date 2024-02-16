@@ -41,7 +41,7 @@ const ProductItems = ({ product }) => {
 
       <Image src={product.img} alt="title" className="max-w-full h-72 object-cover" height="288px" />
 
-      <div className="flex justify-between items-center px-5 mb-4 text-xl">
+      <div className="flex justify-between items-center px-5  text-xl">
         <span className="flex items-center">
           <div
             className={`HeartAnimation ${isLiked && "animate"}`}

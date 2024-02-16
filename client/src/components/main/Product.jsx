@@ -26,9 +26,13 @@ const Product = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-10 px-4 items-center mb-5 max-md:px-1 ">
+    <div className="flex flex-col gap-6 px-4 items-center mb-5 max-md:px-1">
       {post ? post.map((product) => (
+        <React.Fragment key={product._id}>
         <ProductItems product={product} key={product._id} />
+        <ProductItems product={product} key={product._id} />
+        
+        </React.Fragment>
       )) : <p>Burası Boş görünüyor Kaptan</p>}
     </div>
   );
